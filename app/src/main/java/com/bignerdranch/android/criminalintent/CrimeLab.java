@@ -75,7 +75,7 @@ public class CrimeLab {
         }
     }
 
-    public File getPhotoFile(Crime crime) {
+    public File getPhotoFile(Crime crime, int picNumToGet) {
         File externalFilesDir = mContext
                 .getExternalFilesDir(Environment.DIRECTORY_PICTURES);
 
@@ -83,7 +83,7 @@ public class CrimeLab {
             return null;
         }
 
-        return new File(externalFilesDir, crime.getPhotoFilename());
+        return new File(externalFilesDir, crime.getPhotoFilename(picNumToGet));
     }
 
     public void updateCrime(Crime crime) {
@@ -102,6 +102,7 @@ public class CrimeLab {
         values.put(CrimeTable.Cols.DATE, crime.getDate().getTime());
         values.put(CrimeTable.Cols.SOLVED, crime.isSolved() ? 1 : 0);
         values.put(CrimeTable.Cols.SUSPECT, crime.getSuspect());
+        values.put(CrimeTable.Cols.NUMPHOTOS, crime.getNumberPicturesTaken());
 
         return values;
     }

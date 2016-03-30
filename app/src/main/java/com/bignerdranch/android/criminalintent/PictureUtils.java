@@ -23,7 +23,7 @@ public class PictureUtils {
         float srcWidth = options.outWidth;
         float srcHeight = options.outHeight;
 
-        int inSampleSize = 1;
+        int inSampleSize = 8;
         if (srcHeight > destHeight || srcWidth > destWidth) {
             if (srcWidth > srcHeight) {
                 inSampleSize = Math.round(srcHeight / destHeight);
@@ -34,6 +34,8 @@ public class PictureUtils {
 
         options = new BitmapFactory.Options();
         options.inSampleSize = inSampleSize;
+        options.inPurgeable =true;
+        options.inInputShareable = true;
 
         return BitmapFactory.decodeFile(path, options);
     }
