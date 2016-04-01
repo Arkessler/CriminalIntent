@@ -68,7 +68,8 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@android:color/darker_gray"
-            android:layout_margin="10dp" />
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop" />
 
         <ImageView
             android:layout_width="0dp"
@@ -77,7 +78,8 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@android:color/darker_gray"
-            android:layout_margin="10dp" />
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop" />
 
         <ImageView
             android:layout_width="0dp"
@@ -86,7 +88,8 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@android:color/darker_gray"
-            android:layout_margin="10dp" />
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop" />
     </LinearLayout>
 
     <LinearLayout

@@ -43,7 +43,7 @@ public class CrimeFragment extends Fragment {
     private static final int REQUEST_PHOTO= 2;
 
     private Crime mCrime;
-    private File mPhotoFile0, mPhotoFile1, mPhotoFile2, mPhotoFile3;
+    private File mPhotoFile0, mPhotoFile1, mPhotoFile2, mPhotoFile3 = null;
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckbox;
@@ -303,8 +303,8 @@ public class CrimeFragment extends Fragment {
             }
         } else if (requestCode == REQUEST_PHOTO) {
             System.out.println("Calling updatePhotoView from returned photo");
-            updatePhotoView();
             mCrime.setNumberPicturesTaken(mCrime.getNumberPicturesTaken() + 1);
+            updatePhotoView();
         }
     }
 
