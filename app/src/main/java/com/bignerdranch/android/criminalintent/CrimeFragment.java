@@ -379,6 +379,7 @@ public class CrimeFragment extends Fragment {
                     canvas.drawCircle(cs, cy, 10, paint);
                 }
             }*/
+            //
             System.out.println("Changing photo view 0");
             mPhotoView0.setImageBitmap(bitmap);
         }
