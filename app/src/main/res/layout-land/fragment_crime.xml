@@ -117,7 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Enable Face Detection"
-                android:id="@+id/checkBox"
+                android:id="@+id/face_detection_checkbox"
                 android:checked="false"
                 android:textSize="16dp"
                 android:layout_weight="1" />
@@ -126,8 +126,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="5 faces detected"
-                android:id="@+id/textView2"
+                android:text="X faces detected"
+                android:id="@+id/face_detection_report"
                 android:textSize="16dp" />
         </LinearLayout>
 

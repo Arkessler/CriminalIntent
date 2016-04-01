@@ -36,5 +36,5 @@
 
         </activity>
     </application>
-
+    <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="face"/>
 </manifest>

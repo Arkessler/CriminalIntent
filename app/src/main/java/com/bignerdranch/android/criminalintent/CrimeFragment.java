@@ -159,6 +159,14 @@ public class CrimeFragment extends Fragment {
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_crime, container, false);
 
+        CheckBox checkBox = (CheckBox)root.findViewById(R.id.face_detection_checkbox);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updatePhotoView();
+            }
+        });
+        
         mTitleField = (EditText) root.findViewById(R.id.crime_title);
         mTitleField.setText(mCrime.getTitle());
         mTitleField.addTextChangedListener(new TextWatcher() {
@@ -374,12 +382,24 @@ public class CrimeFragment extends Fragment {
             SparseArray<Face> faces = detector.detect(frame);
             TextView faceCountView = (TextView) root.findViewById(R.id.face_detection_report);
             System.out.println("-------------------------faceCountView = " + faceCountView == null);
-            try {
-                faceCountView.setText(faces.size() + " faces detected");
+            CheckBox checkBox = (CheckBox)root.findViewById(R.id.face_detection_checkbox);
+            System.out.println("checkbox is checked:"+checkBox.isChecked());
+            if ((checkBox.isChecked())) {
+                try {
+                    faceCountView.setText(faces.size() + " faces detected");
+                } catch (Exception e) {
+                    System.err.println(e.getMessage());
+                }
             }
-            catch (Exception e) {
-                System.err.println(e.getMessage());
+            else
+            {
+                try {
+                    faceCountView.setText("face detection disabled");
+                } catch (Exception e) {
+                    System.err.println(e.getMessage());
+                }
             }
+
 
         }
         if (mPhotoFile1 == null || !mPhotoFile1.exists()) {
