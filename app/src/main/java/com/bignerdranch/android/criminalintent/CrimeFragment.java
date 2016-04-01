@@ -70,28 +70,61 @@ public class CrimeFragment extends Fragment {
         switch(mCrime.getNumberPicturesTaken()%4)
         {
             case 0:
-                mPhotoFile0 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken());
-                mPhotoFile3 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken()-1);
-                mPhotoFile2 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken()-2);
-                mPhotoFile1 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken()-3);
+                if (mCrime.getNumberPicturesTaken() == 0) {
+                    mPhotoFile0 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken());
+                    mPhotoFile3 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 1);
+                    mPhotoFile2 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 2);
+                    mPhotoFile1 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 3);
+                }
+                else {
+                    mPhotoFile0 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 0);
+                    mPhotoFile3 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 3);
+                    mPhotoFile2 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 2);
+                    mPhotoFile1 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 1);
+                }
                 break;
             case 1:
-                mPhotoFile1 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken());
-                mPhotoFile0 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() -1);
-                mPhotoFile3 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 2);
-                mPhotoFile2 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 3);
+                if (mCrime.getNumberPicturesTaken() == 1) {
+                    mPhotoFile1 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken());
+                    mPhotoFile0 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 1);
+                    mPhotoFile3 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 2);
+                    mPhotoFile2 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 3);
+                }
+                else {
+                    mPhotoFile1 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 1);
+                    mPhotoFile0 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 0);
+                    mPhotoFile3 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 3);
+                    mPhotoFile2 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 2);
+                }
                 break;
             case 2:
-                mPhotoFile2 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken());
-                mPhotoFile1 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken()-1);
-                mPhotoFile0 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken()-2);
-                mPhotoFile3 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken()-3);
+                if (mCrime.getNumberPicturesTaken() == 2) {
+                    mPhotoFile2 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken());
+                    mPhotoFile1 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 1);
+                    mPhotoFile0 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 2);
+                    mPhotoFile3 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 3);
+                }
+                else {
+                    mPhotoFile2 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 2);
+                    mPhotoFile1 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 1);
+                    mPhotoFile0 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 0);
+                    mPhotoFile3 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 3);
+                }
                 break;
             case 3:
-                mPhotoFile3 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken());
-                mPhotoFile2 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken()-1);
-                mPhotoFile1 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken()-2);
-                mPhotoFile0 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken()-3);
+                if (mCrime.getNumberPicturesTaken() == 3) {
+                    mPhotoFile3 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken());
+                    mPhotoFile2 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 1);
+                    mPhotoFile1 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 2);
+                    mPhotoFile0 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, mCrime.getNumberPicturesTaken() - 3);
+                }
+                else {
+                    mPhotoFile3 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 3);
+                    mPhotoFile2 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 2);
+                    mPhotoFile1 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 1);
+                    mPhotoFile0 = CrimeLab.get(getActivity()).getPhotoFile(mCrime, 0);
+                }
+                break;
         }
     }
 

@@ -12,6 +12,16 @@ public class Crime {
     private String mSuspect;
     private int numberPicturesTaken = 0;
 
+    public boolean isFirstPhoto() {
+        return firstPhoto;
+    }
+
+    public void setFirstPhoto(boolean firstPhoto) {
+        this.firstPhoto = firstPhoto;
+    }
+
+    private boolean firstPhoto = true;
+
     public int getNumberPicturesTaken() {
         return numberPicturesTaken;
     }

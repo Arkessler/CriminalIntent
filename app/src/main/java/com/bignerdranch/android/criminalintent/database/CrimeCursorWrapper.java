@@ -22,6 +22,7 @@ public class CrimeCursorWrapper extends CursorWrapper {
         int isSolved = getInt(getColumnIndex(CrimeTable.Cols.SOLVED));
         String suspect = getString(getColumnIndex(CrimeTable.Cols.SUSPECT));
         int numPhotosTaken = getInt(getColumnIndex(CrimeTable.Cols.NUMPHOTOS));
+        int firstPhoto = getInt(getColumnIndex(CrimeTable.Cols.FIRSTPHOTO));
 
         Crime crime = new Crime(UUID.fromString(uuidString));
         crime.setTitle(title);
@@ -29,6 +30,10 @@ public class CrimeCursorWrapper extends CursorWrapper {
         crime.setSolved(isSolved != 0);
         crime.setSuspect(suspect);
         crime.setNumberPicturesTaken(numPhotosTaken);
+        if (firstPhoto > 0)
+            crime.setFirstPhoto(true);
+        else
+            crime.setFirstPhoto(false);
 
         return crime;
     }

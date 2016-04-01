@@ -103,7 +103,10 @@ public class CrimeLab {
         values.put(CrimeTable.Cols.SOLVED, crime.isSolved() ? 1 : 0);
         values.put(CrimeTable.Cols.SUSPECT, crime.getSuspect());
         values.put(CrimeTable.Cols.NUMPHOTOS, crime.getNumberPicturesTaken());
-
+        if (crime.isFirstPhoto())
+            values.put(CrimeTable.Cols.FIRSTPHOTO, 1);
+        else
+            values.put(CrimeTable.Cols.FIRSTPHOTO, 0);
         return values;
     }
 
