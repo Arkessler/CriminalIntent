@@ -113,7 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="5 faces detected"
+            android:text="X faces detected"
             android:id="@+id/face_detection_report"
             android:textSize="16dp" />
     </LinearLayout>

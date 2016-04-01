@@ -367,21 +367,20 @@ public class CrimeFragment extends Fragment {
         } else {
             Bitmap bitmap = PictureUtils.getScaledBitmap(
                     mPhotoFile0.getPath(), getActivity());
+            System.out.println("Changing photo view 0");
+            mPhotoView0.setImageBitmap(bitmap);
+
             Frame frame = new Frame.Builder().setBitmap(bitmap).build();
             SparseArray<Face> faces = detector.detect(frame);
             TextView faceCountView = (TextView) root.findViewById(R.id.face_detection_report);
-            faceCountView.setText(faces.size() + " faces detected");
-            /*for (int i = 0; i < faces.size(); ++i) {
-                Face face = faces.valueAt(i);
-                for (Landmark landmark : face.getLandmarks()) {
-                    int cx = (int) (landmark.getPosition().x * scale);
-                    int cx = (int) (landmark.getPosition().x * scale);
-                    canvas.drawCircle(cs, cy, 10, paint);
-                }
-            }*/
-            //
-            System.out.println("Changing photo view 0");
-            mPhotoView0.setImageBitmap(bitmap);
+            System.out.println("-------------------------faceCountView = " + faceCountView == null);
+            try {
+                faceCountView.setText(faces.size() + " faces detected");
+            }
+            catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+
         }
         if (mPhotoFile1 == null || !mPhotoFile1.exists()) {
             System.out.println("Set photo 1 to null");
